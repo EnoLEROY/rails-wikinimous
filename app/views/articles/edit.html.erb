@@ -1,0 +1,15 @@
+<div class="container">
+<h2 class='text-center m-2'>Edit</h2>
+
+<%= form_with model: @article do |f| %>
+  <%= f.label :title, class: "form-label mt-3"%>
+  <%= f.text_field :title, class: "form-control"%>
+  <%= f.label :content, class: "form-label" %>
+  <%= f.text_area :content, class: "form-control" %>
+  <%= f.submit class: 'btn btn-primary my-2'%>
+<% end %>
+
+  <%= link_to article_path do %>
+    <button class='btn btn-primary my-5'>Back</button>
+  <% end %>
+</div>

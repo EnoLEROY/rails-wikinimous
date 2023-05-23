@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="d-inline-flex align-item p-3">
+    <h2><%= @article.title %></h2>
+
+
+    <%= link_to edit_article_path do %>
+      <button class="btn btn-primary mx-5"><i class="fa-solid fa-pen-to-square"></i></button>
+    <% end %>
+  </div>
+  <p><%= @article.content %></p>
+
+  <%= link_to articles_path do %>
+    <button class='btn btn-primary my-5'>Back</button>
+  <% end %>
+</div>

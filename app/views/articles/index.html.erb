@@ -1,0 +1,28 @@
+<div class=" m-3">
+  <div class="d-inline-flex align-item justify-content-between w-100 px-5 p-3">
+  <h2>Articles</h2>
+
+  <%= link_to new_article_path do %>
+    <button class='btn btn-primary'>Post a new article</button>
+  <% end %>
+  </div>
+
+  <div class="row">
+    <% @articles.each do |article| %>
+      <div class="col-4">
+      <%= link_to article_path(article) do %>
+        <div class="card mt-3 p-3">
+          <h3><%= article.title %></h3>
+          <p><%= article.content %></p>
+        </div>
+        <div class="d-inline-flex justify-content-end w-100">
+          <%= link_to article_path(article), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+            <button class='btn btn-primary'><i class="fa-solid fa-trash mx-2"></i></button>
+          <% end %>
+        </div>
+      <% end %>
+
+      </div>
+    <% end %>
+  </div>
+</div>
